@@ -2,6 +2,235 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss",
+      "skipTests": true
+    },
+    "@schematics/angular:service": {
+      "skipTests": true
+    },
+    "@schematics/angular:pipe": {
+      "skipTests": true
+    },
+    "@schematics/angular:directive": {
+      "skipTests": true
+    },
+    "@schematics/angular:resolver": {
+      "skipTests": true
+    }
+  },
   "projects": {
+    "@uxwb/ngx-components": {
+      "projectType": "library",
+      "root": "projects/uxwb/ngx-components",
+      "sourceRoot": "projects/uxwb/ngx-components/src",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/uxwb/ngx-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/uxwb/ngx-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/uxwb/ngx-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/uxwb/ngx-components/**/*.ts",
+              "projects/uxwb/ngx-components/**/*.html",
+              "projects/uxwb/ngx-components/**/*.css",
+              "projects/uxwb/ngx-components/**/*.scss"
+            ]
+          }
+        }
+      }
+    },
+    "@uxwb/json-forms": {
+      "projectType": "library",
+      "root": "projects/uxwb/json-forms",
+      "sourceRoot": "projects/uxwb/json-forms/src",
+      "prefix": "jf",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/uxwb/json-forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/uxwb/json-forms/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/uxwb/json-forms/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/uxwb/json-forms/**/*.ts",
+              "projects/uxwb/json-forms/**/*.html",
+              "projects/uxwb/json-forms/**/*.css",
+              "projects/uxwb/json-forms/**/*.scss"
+            ]
+          }
+        }
+      }
+    },
+    "demo": {
+      "projectType": "application",
+      "root": "projects/demo",
+      "sourceRoot": "projects/demo/src",
+      "prefix": "app",
+      "i18n": {
+        "sourceLocale": {
+          "baseHref": "/",
+          "code": "ru"
+        },
+        "locales": {
+          "en": "i18n/messages.en.json"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/demo",
+            "index": "projects/demo/src/index.html",
+            "main": "projects/demo/src/main.ts",
+            "polyfills": "projects/demo/src/polyfills.ts",
+            "tsConfig": "projects/demo/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/demo/src/favicon.ico",
+              "projects/demo/src/assets"
+            ],
+            "styles": [
+              "projects/demo/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/demo/src/environments/environment.ts",
+                  "with": "projects/demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "buildOptimizer": true,
+              "optimization": true,
+              "vendorChunk": true,
+              "commonChunk": true,
+              "extractLicenses": true,
+              "sourceMap": false,
+              "namedChunks": true,
+              "aot": true,
+              "localize": true
+            },
+            "development": {
+              "buildOptimizer": true,
+              "optimization": true,
+              "vendorChunk": true,
+              "commonChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "aot": true,
+              "localize": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "demo:build:production"
+            },
+            "development": {
+              "browserTarget": "demo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "demo:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/demo/**/*.ts",
+              "projects/demo/**/*.html",
+              "projects/demo/**/*.css",
+              "projects/demo/**/*.scss"
+            ]
+          }
+        }
+      }
+    },
+    "@uxwb/services": {
+      "projectType": "library",
+      "root": "projects/uxwb/services",
+      "sourceRoot": "projects/uxwb/services/src",
+      "prefix": "ss",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/uxwb/services/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/uxwb/services/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/uxwb/services/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/uxwb/services/**/*.ts",
+              "projects/uxwb/services/**/*.html",
+              "projects/uxwb/services/**/*.css",
+              "projects/uxwb/services/**/*.scss"
+            ]
+          }
+        }
+      }
+    }
   }
 }
