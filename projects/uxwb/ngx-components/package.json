@@ -1,0 +1,13 @@
+{
+  "name": "@uxwb/ngx-components",
+  "version": "0.0.3",
+  "peerDependencies": {
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "bootstrap": "^5.2.0",
+    "@icon/open-iconic": "^1.1.1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
