@@ -1,11 +1,12 @@
 {
-  "name": "@uxwb/json-forms",
+  "name": "@uxwb/components",
   "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0",
-    "@uxwb/ngx-components": "^0.0.3",
-    "bootstrap": "^5.2.0"
+    "@angular/forms": "^14.0.0",
+    "bootstrap": "^5.2.0",
+    "@icon/open-iconic": "^1.1.1"
   },
   "dependencies": {
     "tslib": "^2.3.0"

@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from '@demo/app/app-routing.module';
-import { AppComponent } from '@demo/app/app.component';
-import { PagesModule } from '@demo/app/pages/pages.module';
+import { UxwbComponentsModule } from '../../../uxwb/components/src/lib/components.module';
+import { UxwbFormsModule } from '../../../uxwb/forms/src/lib/forms.module';
+import { UxwbServicesModule } from '../../../uxwb/services/src/lib/services.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -11,6 +14,9 @@ import { PagesModule } from '@demo/app/pages/pages.module';
   imports: [
     PagesModule,
     AppRoutingModule,
+    UxwbComponentsModule,
+    UxwbServicesModule.forRoot({ ajaxPrefixUrl:'/api', webSocketUrl:'/ws' }),
+    UxwbFormsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
   ],
   providers: [],

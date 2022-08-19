@@ -6,8 +6,10 @@ install:
 update:
 	(npm update || true) && npm audit fix --force
 
+build_lib: components.build services.build forms.build
+
 start:
-	npm run start
+	parallel "npm run start" --shell=/bin/bash
 
 localize:
 	npm run i18n
@@ -25,26 +27,22 @@ new_lib:
 
 ######################################################################
 
-release_ngx_fix: lint ngx-components.patch ngx-components.build ngx-components.publish
+release_ngx_fix: components.lint components.patch components.build components.publish
 
-release_ngx_component: lint ngx-components.minor ngx-components.build ngx-components.publish
+release_ngx_component: components.lint components.minor components.build components.publish
 
-release_services_fix: lint services.patch services.build services.publish
+release_services_fix: services.lint services.patch services.build services.publish
 
-release_services_component: lint services.minor services.build services.publish
+release_services_component: services.lint services.minor services.build services.publish
 
-release_jform_fix: lint -jform_vendors json-forms.patch json-forms.build json-forms.publish
+release_forms_fix: forms.lint forms.patch forms.build forms.publish
 
-release_jform_component: lint -jform_vendors json-forms.minor json-forms.build json-forms.publish
-
--jform_vendors: ngx-components.vendor services.vendor
+release_forms_component: forms.lint forms.minor forms.build forms.publish
 
 ######################################################################
 
-%.vendor: %.ver
-	cd projects/uxwb/json-forms && \
-		npm add @uxwb/$*@^$(PACK_VER) --save-peer --no-package-lock && \
-		rm -rf node_modules
+%.lint:
+	npm run build:$*
 
 %.build:
 	npm run build:$*

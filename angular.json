@@ -21,23 +21,23 @@
     }
   },
   "projects": {
-    "@uxwb/ngx-components": {
+    "@uxwb/components": {
       "projectType": "library",
-      "root": "projects/uxwb/ngx-components",
-      "sourceRoot": "projects/uxwb/ngx-components/src",
-      "prefix": "ngx",
+      "root": "projects/uxwb/components",
+      "sourceRoot": "projects/uxwb/components/src",
+      "prefix": "uxwb",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/uxwb/ngx-components/ng-package.json"
+            "project": "projects/uxwb/components/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/uxwb/ngx-components/tsconfig.lib.prod.json"
+              "tsConfig": "projects/uxwb/components/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/uxwb/ngx-components/tsconfig.lib.json"
+              "tsConfig": "projects/uxwb/components/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -46,32 +46,30 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "projects/uxwb/ngx-components/**/*.ts",
-              "projects/uxwb/ngx-components/**/*.html",
-              "projects/uxwb/ngx-components/**/*.css",
-              "projects/uxwb/ngx-components/**/*.scss"
+              "projects/uxwb/components/**/*.ts",
+              "projects/uxwb/components/**/*.html"
             ]
           }
         }
       }
     },
-    "@uxwb/json-forms": {
+    "@uxwb/forms": {
       "projectType": "library",
-      "root": "projects/uxwb/json-forms",
-      "sourceRoot": "projects/uxwb/json-forms/src",
+      "root": "projects/uxwb/forms",
+      "sourceRoot": "projects/uxwb/forms/src",
       "prefix": "jf",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/uxwb/json-forms/ng-package.json"
+            "project": "projects/uxwb/forms/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/uxwb/json-forms/tsconfig.lib.prod.json"
+              "tsConfig": "projects/uxwb/forms/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/uxwb/json-forms/tsconfig.lib.json"
+              "tsConfig": "projects/uxwb/forms/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -80,10 +78,8 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "projects/uxwb/json-forms/**/*.ts",
-              "projects/uxwb/json-forms/**/*.html",
-              "projects/uxwb/json-forms/**/*.css",
-              "projects/uxwb/json-forms/**/*.scss"
+              "projects/uxwb/forms/**/*.ts",
+              "projects/uxwb/forms/**/*.html"
             ]
           }
         }
@@ -118,6 +114,7 @@
               "projects/demo/src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "projects/demo/src/styles.scss"
             ],
             "scripts": []
@@ -190,9 +187,7 @@
           "options": {
             "lintFilePatterns": [
               "projects/demo/**/*.ts",
-              "projects/demo/**/*.html",
-              "projects/demo/**/*.css",
-              "projects/demo/**/*.scss"
+              "projects/demo/**/*.html"
             ]
           }
         }

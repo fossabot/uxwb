@@ -10,7 +10,7 @@
       ],
       "parserOptions": {
         "project": [
-          "projects/uxwb/ngx-components/tsconfig.lib.json"
+          "projects/uxwb/forms/tsconfig.lib.json"
         ],
         "createDefaultProgram": true
       },
@@ -19,7 +19,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "ngx",
+            "prefix": "jf",
             "style": "camelCase"
           }
         ],
@@ -27,7 +27,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "ngx",
+            "prefix": "jf",
             "style": "kebab-case"
           }
         ]
