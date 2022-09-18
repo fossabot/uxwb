@@ -10,7 +10,7 @@
       ],
       "parserOptions": {
         "project": [
-          "projects/uxwb/json-forms/tsconfig.lib.json"
+          "projects/uxwb/components/tsconfig.lib.json"
         ],
         "createDefaultProgram": true
       },
@@ -19,7 +19,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "jf",
+            "prefix": "uxwb",
             "style": "camelCase"
           }
         ],
@@ -27,7 +27,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "jf",
+            "prefix": "uxwb",
             "style": "kebab-case"
           }
         ]

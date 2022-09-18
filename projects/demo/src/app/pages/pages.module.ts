@@ -1,15 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
-import { IndexComponent } from './index/index.component';
+import { InputComponent } from './input/input.component';
+import { ListComponent } from './list/list.component';
 
 export const routes: Routes = [
-  { title: 'Index', path:'', component: IndexComponent },
+  { title: 'List', path:'list', component: ListComponent },
+  { title: 'Input', path:'input', component: InputComponent },
 ];
 
 @NgModule({
   declarations: [
-    IndexComponent,
+    ListComponent,
+    InputComponent,
   ],
   imports: [
     CommonModule,

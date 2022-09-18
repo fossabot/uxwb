@@ -2,4 +2,4 @@
  * Public API Surface of json-forms
  */
 
-export * from './lib/json-forms.module';
+export * from './lib/forms.module';

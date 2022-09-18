@@ -6,12 +6,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": [],
-    "paths": {
-      "@lib/*": [
-        "projects/uxwb/ngx-components/src/lib/*"
-      ]
-    }
+    "types": []
   },
   "exclude": [
     "src/test.ts",

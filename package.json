@@ -1,13 +1,19 @@
 {
-  "name": "@unwb/ngx",
+  "name": "@uxwb/uxwb",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve demo",
+    "start": "ng serve demo --watch --verbose",
     "test": "ng test",
-    "build:ngx-components": "ng build @uxwb/ngx-components",
-    "build:json-forms": "ng build @uxwb/json-forms",
+    "build:components": "ng build @uxwb/components",
+    "watch:components": "ng build @uxwb/components --watch",
+    "lint:components": "ng lint @uxwb/components --fix",
+    "build:forms": "ng build @uxwb/forms",
+    "watch:forms": "ng build @uxwb/forms --watch",
+    "lint:forms": "ng lint @uxwb/forms --fix",
     "build:services": "ng build @uxwb/services",
+    "watch:services": "ng build @uxwb/services --watch",
+    "lint:services": "ng lint @uxwb/services --fix",
     "build:demo": "ng build demo --localize=true",
     "lint": "ng lint --fix",
     "i18n": "ng extract-i18n demo --format=json --output-path=i18n"

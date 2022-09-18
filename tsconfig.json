@@ -2,17 +2,17 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "paths": {
-      "@uxwb/json-forms": [
-        "dist/uxwb/json-forms"
-      ],
-      "@uxwb/ngx-components": [
-        "dist/uxwb/ngx-components"
-      ],
-      "@uxwb/services": [
-        "dist/uxwb/services"
-      ]
-    },
+//    "paths": {
+//      "@uxwb/forms": [
+//        "dist/uxwb/forms"
+//      ],
+//      "@uxwb/components": [
+//        "dist/uxwb/components"
+//      ],
+//      "@uxwb/services": [
+//        "dist/uxwb/services"
+//      ]
+//    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
