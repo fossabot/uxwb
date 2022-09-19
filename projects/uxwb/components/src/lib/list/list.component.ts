@@ -6,16 +6,24 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
+  badgeClass = ['bg-primary', 'bg-secondary', 'bg-success', 'bg-info', 'bg-warning', 'bg-danger'];
+
+  curr?:number;
+
   @Input() title?: string;
 
   @Input() list: ListModel[] = [];
-  
-  @Output() onclick: EventEmitter<ListModel> = new EventEmitter();
 
-  push(v: ListModel): void {
-    this.onclick.emit(v);
+  @Output() event: EventEmitter<ListModel> = new EventEmitter();
+
+  do(i: number, v: ListModel): void {
+    this.curr = i;
+    this.event.emit(v);
   }
 
+  trackFn(i: number, v: ListModel): any {
+    return v.title;
+  }
 }
 
 export class ListModel {
@@ -25,5 +33,5 @@ export class ListModel {
 
   meta: any;
 
-  badge?: number | string;
+  badge?: string[];
 }

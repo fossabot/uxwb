@@ -28,7 +28,3 @@ import { UxwbServicesModule } from '@uxwb/services';
   ...
 })
 ```
-
-## Donate
-
-You can support this and other projects by following the [link](https://sobe.ru/na/X2R2S0s9u1d8).

@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./input.component.scss'],
 })
 export class InputComponent {
+  code = `<uxwb-input
+                [title]="'Example:'"
+                [data]="'123'"
+                (event)="do($event)"
+        ></uxwb-input>`;
 
+  item: string = '';
+
+  do($e: string): void {
+    this.item = $e;
+  }
 }

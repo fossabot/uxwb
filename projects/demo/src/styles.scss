@@ -1,0 +1,18 @@
+$font-size-base: 0.8rem;
+
+@import "~node_modules/bootstrap/scss/bootstrap";
+@import "./../../uxwb/components/style/uxwb";
+
+////////////////////////////////////////////////////////////////////
+
+.code::before {
+  content: "Code";
+}
+
+.demo-in::before {
+  content: "Example IN";
+}
+
+.demo-out::before {
+  content: "Example OUT";
+}

@@ -1,12 +1,22 @@
-<h4 *ngIf="title">{{title}}</h4>
-<ul class="list-group list-group-flush">
-    <li *ngFor="let item of list"
-        (click)="push(item)" [class.click]="item.meta"
-        class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">{{item.title}}</div>
-            <span *ngIf="item.description">{{item.description}}</span>
-        </div>
-        <span *ngIf="item.badge" class="badge bg-secondary rounded-pill">{{item.badge}}</span>
-    </li>
-</ul>
+<div class="uxwb-block" [uxwbContent]="title">
+    <ul class="list-group list-group-flush">
+        <li *ngFor="let item of list; let i = index; trackBy:trackFn"
+            (click)="do(i, item)" [class.uxwb-click]="item.meta"
+            class="list-group-item d-flex justify-content-between align-items-start"
+            [class.uxwb-list__active]="curr === i"
+        >
+            <div class="ms-2 me-auto">
+                <div><b>{{item.title}}</b></div>
+                <span *ngIf="item.description">{{item.description}}</span>
+            </div>
+            <ng-container *ngIf="item.badge">
+            <span
+                    *ngFor="let b of item.badge"
+                    class="badge rounded-pill"
+                    [uxwbClass]="b"
+                    [uxwbClassList]="badgeClass"
+            >{{b}}</span>
+            </ng-container>
+        </li>
+    </ul>
+</div>

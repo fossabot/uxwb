@@ -14,8 +14,8 @@ export class AppComponent {
   }
 
   routes: ListModel[] = [
-    { title: $localize`List`, meta: 'list', badge: 'ui' },
-    { title: $localize`Input`, meta: 'input', badge: 'ui' },
+    { title: $localize`List`, meta: 'list', badge: ['ui'] },
+    { title: $localize`Input`, meta: 'input', badge: ['ui'] },
   ];
 
   listNavigate(v: ListModel): void {
