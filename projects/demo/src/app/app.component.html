@@ -3,7 +3,7 @@
     <hr>
     <div class="row">
         <div class="col-sm-4 col-md-3 col-xl-2 vertical-line">
-            <uxwb-list [title]="'Examples'" [list]="routes" (onclick)="listNavigate($event)"></uxwb-list>
+            <uxwb-list [title]="'Examples'" [list]="routes" (event)="listNavigate($event)"></uxwb-list>
         </div>
         <div class="col-sm-8 col-md-9 col-xl-10">
             <router-outlet></router-outlet>

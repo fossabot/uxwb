@@ -114,7 +114,6 @@
               "projects/demo/src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/scss/bootstrap.scss",
               "projects/demo/src/styles.scss"
             ],
             "scripts": []

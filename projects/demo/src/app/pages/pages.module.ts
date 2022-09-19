@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
+import { UxwbComponentsModule } from '../../../../uxwb/components/src/lib/components.module';
 import { InputComponent } from './input/input.component';
 import { ListComponent } from './list/list.component';
 
@@ -16,6 +17,7 @@ export const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    UxwbComponentsModule,
   ],
   exports:[
 
